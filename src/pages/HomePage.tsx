@@ -5,6 +5,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { AnnouncementBanner } from '../components/AnnouncementBanner';
 import { ScrollToTop } from '../components/ScrollToTop'; 
+import { PartnerLogos } from '../components/PartnerLogos';
 import { Course } from '../types';
 import { useSearchStore } from '../store/search'; // 🟡 import global search
 
@@ -79,6 +80,7 @@ export function HomePage() {
           )}
         </div>
       </main>
+      <PartnerLogos />
       <Footer />
     </div>
   );
