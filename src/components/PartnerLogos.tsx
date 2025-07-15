@@ -1,62 +1,47 @@
-import partnersData from '../data/partners.json';
-
-interface Partner {
-  id: number;
-  name: string;
-  logo: string;
-  url: string;
-  alt: string;
-}
+import React from 'react';
+import partners from '../data/partners.json';
 
 export function PartnerLogos() {
-  const { partners } = partnersData;
-
   return (
-    <section className="py-16 bg-dark/30">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Our Partners
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            We collaborate with leading organizations to bring you the best engineering education in Kannada.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {partners.map((partner: Partner) => (
+    <section className="mt-16">
+      <h2 className="text-3xl font-bold text-center text-white mb-4">Our Partners</h2>
+      <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        We collaborate with leading organizations to bring you the best engineering education.
+      </p>
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 gap-6 items-center justify-items-center">
+          {(partners as Array<any>).map((partner) => (
             <a
-              key={partner.id}
-              href={partner.url}
+              key={partner.name}
+              href={partner.website || partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
-              aria-label={`Visit ${partner.name}`}
+              aria-label={partner.name}
+              className="flex items-center justify-center p-4 bg-white/5 rounded-lg shadow hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={partner.logo}
                 alt={partner.alt}
-                className="h-12 w-auto max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                onError={(e) => {
+                className="h-16 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+                onError={e => {
                   const target = e.target as HTMLImageElement;
-                  target.src = `https://via.placeholder.com/120x48?text=${encodeURIComponent(partner.name)}`;
+                  if (!target.src.endsWith('placeholder.png')) {
+                    target.src = '/images/partners/placeholder.png';
+                  }
                 }}
               />
             </a>
           ))}
         </div>
-        
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-400">
-            Interested in partnering with us?{' '}
-            <a 
-              href="mailto:contact@engineeringinkannada.com" 
-              className="text-primary hover:text-primary/80 underline"
-            >
-              Get in touch
-            </a>
-          </p>
-        </div>
+      </div>
+      <div className="mt-8 text-center">
+        <span className="text-gray-300">Interested in partnering with us?{' '}</span>
+        <a
+          href="mailto:chandansgowda167@gmail.com"
+          className="text-primary hover:text-primary/80 underline"
+        >
+          Contact us
+        </a>
       </div>
     </section>
   );
