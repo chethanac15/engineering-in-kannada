@@ -5,7 +5,7 @@ export function PartnerLogos() {
   return (
     <section className="mt-16">
       <h2 className="text-3xl font-bold text-center text-white mb-4">Our Partners</h2>
-      <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+      <p className="text-base text-gray-300 max-w-3xl mx-auto mb-8">
         We collaborate with leading organizations to bring you the best engineering education.
       </p>
       <div className="flex justify-center">
@@ -40,7 +40,7 @@ export function PartnerLogos() {
           href="mailto:chandansgowda167@gmail.com"
           className="text-primary hover:text-primary/80 underline"
         >
-          Contact us
+          Get in Touch
         </a>
       </div>
     </section>

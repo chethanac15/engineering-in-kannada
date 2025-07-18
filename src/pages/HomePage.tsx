@@ -46,8 +46,6 @@ export function HomePage() {
           <AnnouncementBanner />
         </div>
 
-        <PartnerLogos />
-
         <div className="mt-16">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-white">Available Courses</h2>
@@ -81,6 +79,8 @@ export function HomePage() {
             <p className="mt-4 text-center text-gray-400">No courses found.</p>
           )}
         </div>
+
+        <PartnerLogos />
       </main>
       <Footer />
     </div>
