@@ -5,9 +5,11 @@ export function PartnerLogos() {
   return (
     <section className="mt-16">
       <h2 className="text-3xl font-bold text-center text-white mb-4">Our Partners</h2>
-      <p className="text-base text-gray-300 max-w-3xl mx-auto mb-8">
-        We collaborate with leading organizations to bring you the best engineering education.
-      </p>
+      <div className="w-full flex justify-center">
+        <p className="text-base text-gray-300 text-center leading-relaxed mb-8" style={{maxWidth: 800, width: "100%", paddingLeft: 32, paddingRight: 32}}>
+          We collaborate with leading organizations to bring you the best engineering education.
+        </p>
+      </div>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 gap-6 items-center justify-items-center">
           {(partners as Array<any>).map((partner) => (
